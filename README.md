@@ -15,6 +15,7 @@ class Diagram Java FX
 
 
 classDiagram
+
     ServiceTable  <|-- TransactionTable
     AccountTable "1"--o"*" TransactionTable : do
     branchtable --|> employeetable
