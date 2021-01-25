@@ -12,8 +12,8 @@ Pembagian tugas:
 Deskripsi program
 Bank activity based management berfungsi untuk membantu pengelola bank dalam hal mengatur aktivitas account, transaksi, layanan, dan pekerja di tiap cabangnya. Aplikasi ini digunakan untuk menginputkan informasi riwayat aktivitas bank, yang dapat digunakan oleh sang manager untuk memantau aktivitas banknya.
 
-classDiagram
+# classDiagram
 ![Picture1](https://user-images.githubusercontent.com/62495955/105750458-5bc02c80-5f77-11eb-84c0-ecb1a67fdb50.png)
 
-erDiagram
+# erDiagram
 ![Picture2](https://user-images.githubusercontent.com/62495955/105750500-68448500-5f77-11eb-8752-657891b4a67d.png)
