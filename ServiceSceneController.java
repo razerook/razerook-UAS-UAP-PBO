@@ -1,9 +1,9 @@
 package bankmanagement;
 
-import DB.DBConnection;
-import DB.DeleteDatabase;
-import DB.DisplayDatabase;
-import DB.QueryDatabase;
+import database.DBConnection;
+import database.DeleteDatabase;
+import database.DisplayDatabase;
+import database.QueryDatabase;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -150,19 +150,14 @@ public class ServiceSceneController implements Initializable {
       
             c = DBConnection.connect();
             String query = "INSERT INTO transactiontable (Date,Account_Num,Transaction_Type,Amount)VALUES("+
-                                "'"+date+"',\n" +
-                                "'"+accNum+"',\n" +
-                                "'Debit',\n" +
-                                "'"+amt+"');";                   
+                                "'"+date+"',\n" +"'"+accNum+"',\n" +"'Debit',\n" +"'"+amt+"');";                   
             PreparedStatement ps = c.prepareStatement(query,PreparedStatement.RETURN_GENERATED_KEYS);
             ps.execute();
-             rs = ps.getGeneratedKeys();
+            rs = ps.getGeneratedKeys();
             rs.next();
             String tId = rs.getString(1);
 
-
             balance-=amt;
-
         
             query = "Update accounttable set Balance='"+balance+"' where Account_Number='"+accNum+"';";
             c.createStatement().execute(query);
@@ -180,8 +175,7 @@ public class ServiceSceneController implements Initializable {
           } catch (SQLException ex) {
                 Logger.getLogger(TransactoinSceneController.class.getName()).log(Level.SEVERE, null, ex);
           }
-       
-        
+               
         tData.buildData(sTableView, "Select * from servicetable");
         
         clearFields();
