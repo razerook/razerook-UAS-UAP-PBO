@@ -1,9 +1,9 @@
 package bankmanagement;
 
-import DB.DBConnection;
-import DB.DeleteDatabase;
-import DB.DisplayDatabase;
-import DB.QueryDatabase;
+import database.DBConnection;
+import database.DeleteDatabase;
+import database.DisplayDatabase;
+import database.QueryDatabase;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -136,12 +136,8 @@ public class TransactoinSceneController implements Initializable {
 
             c = DBConnection.connect();
             String query = "INSERT INTO transactiontable (Date,Account_Num,Transaction_Type,Amount)VALUES("+
-                                "'"+date+"',\n" +
-                                "'"+accNum+"',\n" +
-                                "'"+tType+"',\n" +
-                                "'"+amt+"');";                   
-
-             c.createStatement().execute(query);
+                                "'"+date+"',\n" +"'"+accNum+"',\n" +"'"+tType+"',\n" +"'"+amt+"');";                   
+            c.createStatement().execute(query);
             if(tType.equalsIgnoreCase("Debit")){
              balance-=amt;
             }else{
