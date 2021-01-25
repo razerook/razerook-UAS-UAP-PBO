@@ -1,8 +1,8 @@
 package bankmanagement;
 
-import DB.DBConnection;
-import DB.DisplayDatabase;
-import DB.QueryDatabase;
+import database.DBConnection;
+import database.DisplayDatabase;
+import database.QueryDatabase;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
