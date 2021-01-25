@@ -169,4 +169,4 @@ public class BranchEmployeeSceneController implements Initializable {
         empData.buildData(eTableView,query);
     }   
     
-}
+)
